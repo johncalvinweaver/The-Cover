@@ -1,38 +1,34 @@
-# The Cover — Sports Betting Signals & Narrative Insights (Preview)
+# The Cover
 
-**The Cover** is a data-driven insights app for bettors. Think **Bloomberg for betting**:
-- Real-time **odds & line movement** signals
-- **AI-style projections** and expected value (EV) summaries
-- Clear, human **narratives** that explain the numbers
+A modern, responsible, and transparent sports odds/projection API and reference UI.
 
-> This repository is a *public preview* of our direction. It includes:
-> - A mock API (OpenAPI spec + example responses)
-> - Static UI mockups
-> - Product vision, compliance stance, and roadmap
-> - No production systems, no sportsbook functionality
+## Features
 
-**We are not a sportsbook.** We do not take bets. This project provides information only.
+- Mock odds, projections, and line movement endpoints (OpenAPI documented)
+- Static UI preview
+- Roadmap and compliance documentation
+- Professional structure for rapid MVP development
 
-## Quick start (mock API)
-```bash
-# Optional: run a tiny mock server (requires Python 3.10+)
-pip install fastapi uvicorn
-python src/app.py
-# Visit http://localhost:8000/docs for live mock endpoints
-```
+## Quickstart
 
-What’s here
-• api/openapi.yaml — documented endpoints for odds, projections, line moves (mocked)
-• api/mock/*.json — example responses
-• docs/ — vision, UX wireframes, compliance, data sourcing
-• src/sample_frontend/ — static HTML/CSS mock UI (no framework)
-• ROADMAP.md — phases, milestones, and integration plan
+1. **Mock API**:  
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   uvicorn app:app --reload
+   ```
+   Serves OpenAPI docs at `http://localhost:8000/docs`.
 
-Ethics & Compliance
-• We geofence for legal jurisdictions only (planned).
-• We provide information, not wagering.
-• We include tools for limits, self-exclusion links, and responsible gaming resources.
+2. **Static UI**:  
+   Open `static/index.html` in your browser.
 
-Contact: team@thecover.app
+## Directory Structure
 
----
+- `api/` — OpenAPI spec
+- `backend/` — Mock API server (FastAPI)
+- `static/` — UI mockup
+- `docs/` — Compliance, data sourcing, responsible gaming, etc.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md)
