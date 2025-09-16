@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: The Cover Mock API
+  version: "0.1"
+servers:
+  - url: http://localhost:8000
+paths:
+  /odds:
+    get:
+      summary: Get current odds (mock)
+      responses:
+        '200':
+          description: Example odds
+          content:
+            application/json:
+              example:
+                game_id: "NFL20250101"
+                teams: ["NE", "NYJ"]
+                odds: { NE: -120, NYJ: +110 }
+  /projections:
+    get:
+      summary: Get model projections (mock)
+      responses:
+        '200':
+          description: Model projections
+          content:
+            application/json:
+              example:
+                game_id: "NFL20250101"
+                NE_win_prob: 0.58
+                NYJ_win_prob: 0.42
+                ev: { NE: 4.2, NYJ: -3.7 }
+  /line-moves:
+    get:
+      summary: Get recent line moves (mock)
+      responses:
+        '200':
+          description: Line movement history
+          content:
+            application/json:
+              example:
+                game_id: "NFL20250101"
+                moves:
+                  - time: "2025-09-16T15:00:00Z"
+                    NE: -120
+                    NYJ: +110
+                  - time: "2025-09-16T12:00:00Z"
+                    NE: -115
+                    NYJ: +105
