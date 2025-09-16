@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install fastapi uvicorn
+      - name: Lint backend
+        run: |
+          pip install flake8
+          flake8 backend/
+      - name: Backend smoke test
+        run: |
+          uvicorn backend.app:app --host 127.0.0.1 --port 9000 &
+          sleep 5
+          curl -f http://127.0.0.1:9000/odds
