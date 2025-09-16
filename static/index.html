@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Cover — UI Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .team { font-weight: bold; }
+    .odds { color: #2677c6; }
+    .ev { font-size: 0.95em; color: #444; }
+  </style>
+</head>
+<body>
+  <h1>The Cover — Sports Odds & Projections</h1>
+  <div class="card">
+    <div><span class="team">NE</span> vs <span class="team">NYJ</span></div>
+    <div>Odds: <span class="odds">NE -120, NYJ +110</span></div>
+    <div>Model Proj: NE win prob 58%, NYJ win prob 42%</div>
+    <div class="ev">Expected Value: NE +4.2, NYJ -3.7</div>
+    <div>Line moves:
+      <ul>
+        <li>15:00 UTC — NE -120, NYJ +110</li>
+        <li>12:00 UTC — NE -115, NYJ +105</li>
+      </ul>
+    </div>
+  </div>
+  <p><em>This is a static UI mockup. Backend endpoints documented in OpenAPI spec.</em></p>
+</body>
+</html>
